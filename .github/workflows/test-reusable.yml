@@ -1,0 +1,13 @@
+name: Teste de workflow reutilizável
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Confirmar execução
+        run: echo "Workflow reutilizável executado com sucesso!"
