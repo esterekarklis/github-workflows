@@ -1,0 +1,8 @@
+name: Chamar workflow reutilizável
+
+on:
+  workflow_dispatch:
+
+jobs:
+  chamar-workflow:
+    uses: ./.github/workflows/test-reusable.yml
