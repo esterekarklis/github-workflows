@@ -6,3 +6,5 @@ on:
 jobs:
   chamar-workflow:
     uses: ./.github/workflows/test-reusable.yml
+    with:
+      mensagem: "Mensagem enviada pelo workflow chamador"
