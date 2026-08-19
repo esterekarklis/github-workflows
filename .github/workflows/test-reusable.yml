@@ -2,12 +2,27 @@ name: Teste de workflow reutilizável
 
 on:
   workflow_call:
+    inputs:
+      mensagem:
+        description: Mensagem enviada pelo workflow chamador
+        required: false
+        type: string
+        default: "Nenhuma mensagem foi informada"
+
   workflow_dispatch:
+    inputs:
+      mensagem:
+        description: Mensagem exibida no teste
+        required: false
+        type: string
+        default: "Execução manual"
 
 jobs:
   teste:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Confirmar execução
-        run: echo "Workflow reutilizável executado com sucesso!"
+      - name: Exibir mensagem recebida
+        env:
+          MENSAGEM: ${{ inputs.mensagem }}
+        run: echo "$MENSAGEM"
